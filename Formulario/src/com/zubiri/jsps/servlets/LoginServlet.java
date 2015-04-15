@@ -41,8 +41,8 @@ public class LoginServlet extends HttpServlet {
 		
 		if(usuario.equals("anthony") && pass.equals("perez")){
 			System.out.println("LOOOOL");
-			request.setAttribute("usuarioLogeado", usuario+" "+pass);
-			request.getRequestDispatcher("welcome.jsp").forward(request, response);
+			request.setAttribute("usuarioLogeado", usuario + " " + pass);
+			request.getRequestDispatcher("wellcome.jsp").forward(request, response);
 		}
 		else {
 			System.out.println("error usuario no existe");
