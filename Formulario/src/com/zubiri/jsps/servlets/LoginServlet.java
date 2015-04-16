@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.io.PrintWriter;
 /**
  * Servlet implementation class LoginServlet
  */
@@ -36,13 +36,22 @@ public class LoginServlet extends HttpServlet {
 		String usuario = request.getParameter("nombre");
 		String pass = request.getParameter("pass");
 		
-		System.out.println("usuario: " + usuario);
-		System.out.println("contraseña: " + pass);
+		//System.out.println("usuario: " + usuario);
+		//System.out.println("contraseña: " + pass);
+		
 		
 		if(usuario.equals("anthony") && pass.equals("perez")){
-			System.out.println("LOOOOL");
-			request.setAttribute("usuarioLogeado", usuario + " " + pass);
-			request.getRequestDispatcher("wellcome.jsp").forward(request, response);
+			//System.out.println("LOOOOL");
+			//request.setAttribute("usuarioLogeado", usuario +" " + pass);
+			//request.getRequestDispatcher("wellcome.jsp").forward(request, response);
+			PrintWriter out = response.getWriter();
+			out.println("<html>");
+			out.println("<body>");
+			out.println("<p> bien el usuario existe </p>");
+			out.println("</body>");
+			out.println("</html>");
+			
+			
 		}
 		else {
 			System.out.println("error usuario no existe");
